@@ -4,4 +4,8 @@
     <li><%= item.name %></li>
   <% end %>
 </ul>
-<input type="text" placeholder="Please enter an item"> <input type="submit" value="+">
+
+<%= form_with url: items_path  do |form| %>
+  <%= form.text_field :name, placeholder: "Please enter an item", :autofocus => true %>
+  <%= form.submit "+" %>
+<% end %>
